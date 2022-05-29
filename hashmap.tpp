@@ -75,7 +75,7 @@ bool Hashmap<K, V>::remove_item(K key)
         if (bucket_ptr->nodes[index]->key == key) // update value, associate with key
         {
             bucket_ptr->nodes[index]->is_added = false;
-            bucket_ptr->size++;
+            bucket_ptr->size--;
             // no need to freed, we'll use this node again.
             return true;
         }
